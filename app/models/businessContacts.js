@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 
 const bus_ContactSchema = new Schema({
     name: String,
-    ContactNumber: Number,
+    phone: Number,
     email: String
 }, {
     timestamps: true,
-    collection: 'BusinessContacts'
+    collection: 'businessContacts'
 });
 
 export default mongoose.model('BusinessContacts', bus_ContactSchema);
