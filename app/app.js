@@ -2,20 +2,36 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import session from "express-session";
+
+
 //ES Modules fix for __dirname
 import path, { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+
+//Import mongoose Module
+import mongoose from 'mongoose';
+
+
 //import configuration module
-import { Secret } from '../config/config.js';
+import { MongoDB, Secret } from '../config/config.js';
 
 
 // Routes
 import indexRouter from './routes/routes.server.js';
 
-
+//Instantiate Express App
 const app = express();
+
+//Complete the Db config
+mongoose.connect(MongoDB);
+const db = mongoose.connection;
+
+//Success or error Listeners
+db.on('open', () => console.log("Connected to MongoDB"));
+db.on('error', () => console.log("MongoDB Connection Error"));
+
 
 // view Engine EJS 
 app.set('views', path.join(__dirname, '/views'));
