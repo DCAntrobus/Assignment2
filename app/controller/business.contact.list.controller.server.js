@@ -9,3 +9,7 @@ export function DisplayContactBusinessList(req, res, next) {
         res.render('index', { title: 'Business Contact List', page: 'businesscontacts/contactlist', businessContact: businessCollection })
     })
 }
+
+export function DisplayContactAddPage(req, res, next) {
+    res.render('index', { title: 'Add Contact information', page: 'businesscontacts/listedit', businessContact: {} });
+}
