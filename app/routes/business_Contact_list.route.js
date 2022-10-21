@@ -7,8 +7,8 @@ const router = Router();
 router.get('/business-contact-list', DisplayContactBusinessList);
 router.get('/business-contact-add', DisplayContactAddPage);
 router.post('/business-contact-add', ProcessBusinessContactAddPage);
-router.post('/business-contact-edit/:id', ProcessBusinessContactEditPage);
 router.get('/business-contact-edit/:id', DisplayContactEditPage);
+router.post('/business-contact-edit/:id', ProcessBusinessContactEditPage);
 router.get('/business-contact-delete/:id', ProcessBusinessContactDelete)
 
 export default router;
