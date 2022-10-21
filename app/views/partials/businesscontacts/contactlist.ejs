@@ -1,5 +1,8 @@
 <div class="container">
     <h1>Business Contact List </h1>
+    <a href="/business-contact-add" class="btn btn-primary" role="button">
+        <i class="fas fa-plus-circle"></i> Add A Business Contact
+    </a>
 
     <div class="row">
         <div class="col">
@@ -11,23 +14,37 @@
                         <th scope="col">Name</th>
                         <th scope="col">Phone Number</th>
                         <th scope="col">Email Address</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
-                <tbody id="businessContact">
+                <tbody id="businessContacts">
                     <!-- Repeatable Rows -->
-                    <% for(let count=0; count < businessContact.length; count++) { %>
+                    <% for(let count=0; count < businessContacts.length; count++) { %>
                         <tr>
                             <th scope="row" class="text-center">
                                 <%= count + 1 %>
                             </th>
                             <td>
-                                <%= businessContact[count].name %>
+                                <%= businessContacts[count].name %>
                             </td>
                             <td>
-                                <%= businessContact[count].phone%>
+                                <%= businessContacts[count].phone%>
                             </td>
                             <td>
-                                <%= businessContact[count].email %>
+                                <%= businessContacts[count].email %>
+                            </td>
+                            <td class="text-center col-1">
+                                <a href="/business-contact-edit/<%=businessContacts[count]._id %>"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="fas fa-pencil-alt">Edit</i>
+                                </a>
+                            </td>
+                            <td class="text-center col-1">
+                                <a href="/business-contact-delete/<%=businessContacts[count]._id %>"
+                                    class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt">Delete</i>
+                                </a>
                             </td>
                         </tr>
                         <% } %>
