@@ -1,4 +1,3 @@
-import businessContacts from '../models/businessContacts.js';
 import busconlistModel from '../models/businessContacts.js';
 
 export function DisplayContactBusinessList(req, res, next) {
@@ -22,7 +21,7 @@ export function ProcessBusinessContactAddPage(req, res, next) {
         email: req.body.email
     });
 
-    busconlistModel.create({ newContact }, (err, businessContact) => {
+    busconlistModel.create({ newContact }, (err, BusinessContact) => {
         if (err) {
             console.error(err);
             res.end(err);
@@ -55,7 +54,7 @@ export function ProcessBusinessContactEditPage(req, res, next) {
         email: req.body.email
     });
 
-    busconlistModel.updateOne({ _id: id }, newContact, (err, businessContact) => {
+    busconlistModel.updateOne({ _id: id }, newContact, (err, BusinessContact) => {
         if (err) {
             console.error(err);
             res.end(err);
