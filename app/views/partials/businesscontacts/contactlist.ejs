@@ -11,8 +11,6 @@
                         <th scope="col">Name</th>
                         <th scope="col">Phone Number</th>
                         <th scope="col">Email Address</th>
-                        <th></th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="businessContact">
@@ -23,13 +21,13 @@
                                 <%= count + 1 %>
                             </th>
                             <td>
-                                <%= businessContact[count].Name %>
+                                <%= businessContact[count].name %>
                             </td>
                             <td>
-                                <%= businessContact[count].Phone%>
+                                <%= businessContact[count].phone%>
                             </td>
                             <td>
-                                <%= movies[count].Email %>
+                                <%= businessContact[count].email %>
                             </td>
                         </tr>
                         <% } %>

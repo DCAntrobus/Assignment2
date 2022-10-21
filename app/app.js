@@ -20,6 +20,7 @@ import { MongoDB, Secret } from '../config/config.js';
 
 // Routes
 import indexRouter from './routes/routes.server.js';
+import businessContactsRouter from './routes/business_Contact_list.route.js';
 
 //Instantiate Express App
 const app = express();
@@ -49,6 +50,7 @@ app.use(session({
 }));
 
 app.use('/', indexRouter);
+app.use('/', businessContactsRouter);
 
 export default app;
 
