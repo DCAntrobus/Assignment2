@@ -4,3 +4,12 @@ export function UserDisplayName(req) {
     }
     return '';
 }
+
+// checks if User is authenticated
+
+export function AuthGuard(req, res, next) {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
+    next();
+}

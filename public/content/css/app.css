@@ -176,3 +176,14 @@ input {
     width: 40px;
     height: auto;
 }
+
+/*Assignment 2*/
+th,
+td {
+    font-family: monospace;
+}
+
+h1 {
+    font-family: monospace;
+    color: whitesmoke;
+}

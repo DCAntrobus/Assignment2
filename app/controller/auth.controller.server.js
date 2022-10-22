@@ -12,14 +12,14 @@ import { UserDisplayName } from '../utils/index.js';
 //Display Functions
 export function DisplayLoginPage(req, res, next) {
     if (!req.user) {
-        return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage') })
+        return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req) });
     }
     return res.redirect('/business-contact-list');
 }
 
 export function DisplayRegistrationPage(req, res, next) {
     if (!req.user) {
-        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage') })
+        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req) })
     }
     return res.redirect('/business-contact-list');
 }
@@ -41,7 +41,7 @@ export function ProcessLoginPage(req, res, next) {
                 res.end(err);
             }
 
-            return res.redirecct('/');
+            return res.redirect('/');
         })
 
     })(req, res, next);
