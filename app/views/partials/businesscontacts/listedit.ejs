@@ -1,3 +1,4 @@
+<!--BOOTSTRAP REUSED CODE -->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
@@ -15,21 +16,21 @@
 
                 <div class="form-group">
                     <label for="phoneNumber">Phone</label>
-                    <input type="tel" class="form-control" id="phone" placeholder="xxx-xxx-xxxx"
+                    <input type="tel" class="form-control" id="phonetextField" placeholder="xxx-xxx-xxxx"
                         pattern="[0-9]{3}[0-9]{3}[0-9]{4}" name="phone" value="<%= bContacts.phone %>" required>
                 </div>
 
                 <div class="form-group">
                     <label for="emailTextField">Email</label></label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter Email Address" name="email"
-                        value="<%= bContacts.email %>" required>
+                    <input type="email" class="form-control" id="emailTextField" placeholder="Enter Email Address"
+                        name="email" value="<%= bContacts.email %>" required>
                 </div>
                 <div class="form-group">
                     <label for="emailTextField">Company</label></label>
-                    <input type="text" class="form-control" id="company" placeholder="Enter Company Name" name="company"
-                        value="<%= bContacts.company %>" required>
+                    <input type="text" class="form-control" id="nameTextField" placeholder="Enter Company Name"
+                        name="company" value="<%= bContacts.company %>" required>
                 </div>
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-dark" type="submit">
                     <i class="fas fa-edit"></i>Submit
                 </button>
 
