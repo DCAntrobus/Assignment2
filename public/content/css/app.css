@@ -183,7 +183,8 @@ td {
     font-family: monospace;
 }
 
-h1 {
+h1,
+.form-group {
     font-family: monospace;
     color: whitesmoke;
 }

@@ -1,17 +1,21 @@
+
 import busconlistModel from '../models/businessContacts.js';
 
+// import functions from utils
 import { UserDisplayName } from '../utils/index.js';
 
+// displays table of contact lists
 export function DisplayContactBusinessList(req, res, next) {
-    busconlistModel.find(function (err, businessCollection) {
+    busconlistModel.find(function (err, bContactsCollection) {
         if (err) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', { title: 'Business Contact List', page: 'businesscontacts/contactlist', bContacts: businessCollection, displayName: UserDisplayName(req) });
+        res.render('index', { title: 'Business Contact List', page: 'businesscontacts/contactlist', bContacts: bContactsCollection, displayName: UserDisplayName(req) });
     })
 }
 
+// displays contact add page
 export function DisplayContactAddPage(req, res, next) {
     res.render('index', { title: 'Add Contact information', page: 'businesscontacts/listedit', bContacts: {}, displayName: UserDisplayName(req) });
 }
@@ -24,7 +28,7 @@ export function ProcessBusinessContactAddPage(req, res, next) {
         company: req.body.company
     });
 
-    busconlistModel.create({ newContact }, (err, BusinessContact) => {
+    busconlistModel.create(newContact, (err, BusinessContacts) => {
         if (err) {
             console.error(err);
             res.end(err);
@@ -58,7 +62,7 @@ export function ProcessBusinessContactEditPage(req, res, next) {
         company: req.body.company
     });
 
-    busconlistModel.updateOne({ _id: id }, newContact, (err, BusinessContact) => {
+    busconlistModel.updateOne({ _id: id }, newContact, (err, BusinessContacts) => {
         if (err) {
             console.error(err);
             res.end(err);
