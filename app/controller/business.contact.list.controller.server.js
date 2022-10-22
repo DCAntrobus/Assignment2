@@ -1,3 +1,7 @@
+/*Assignment 2 
+ Desmond Antrobus
+ 300657388
+ COMP229 SEC 401 */
 
 import busconlistModel from '../models/businessContacts.js';
 
@@ -20,6 +24,7 @@ export function DisplayContactAddPage(req, res, next) {
     res.render('index', { title: 'Add Contact information', page: 'businesscontacts/listedit', bContacts: {}, displayName: UserDisplayName(req) });
 }
 
+//Processes Add Contact Page
 export function ProcessBusinessContactAddPage(req, res, next) {
     let newContact = busconlistModel({
         name: req.body.name,
@@ -51,6 +56,8 @@ export function DisplayContactEditPage(req, res, next) {
     });
 
 }
+
+// Processes Contact edit page 
 export function ProcessBusinessContactEditPage(req, res, next) {
     let id = req.params.id;
 
@@ -71,6 +78,7 @@ export function ProcessBusinessContactEditPage(req, res, next) {
     })
 }
 
+// Function for deleting contacts
 export function ProcessBusinessContactDelete(req, res, next) {
     let id = req.params.id;
 

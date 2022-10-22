@@ -1,3 +1,8 @@
+/*Assignment 2 
+ Desmond Antrobus
+ 300657388
+ COMP229 SEC 401 */
+
 //import Mongoose 
 import mongoose from 'mongoose';
 
